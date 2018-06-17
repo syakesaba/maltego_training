@@ -34,8 +34,39 @@
     - **syakesabaメモ: Kaggleで公開された匿名化されたデータではなく、プライベートに紐付けられる情報が多いので取扱い注意**
     - 自分でTransformを作ることで、対象組織に特化したOSINTをすることができる
 # MaltegoでTransformを自分で作るための最初の一歩
-    1. 
+    1. nem-test1.pdf
+```
+#!/usr/bin/env python3
+#encoding: utf-8
 
+from MaltegoTransform import *
+import requests
+import datetime
+import json
+
+url = "http://go.nem.ninja:7890/account/transfers/outgoing?address="
+
+def getNemTimestamp(nemTimeStamp):
+    nemesisTime = datetime.datetime(2015, 3, 29, 9, 6, 25, 0).timestamp()
+    timeStamp = nemTimeStamp + int(nemesisiTime)
+    timeStamp = datetime.datetime.fromtimestamp(timeStamp)
+    return timeStamp
+
+address_id = sys.argv[1]
+
+res = requests.get(url + address_id)
+
+if res.status_code == 200:
+    json_data = json.loads(res.text)
+    for recipients in json_data["data"]:
+        try:
+            me = MaltegoTransform()
+            ent = me.addEntity("youroeganization.NEM, recipients['transaction']['recipient']")
+        except:
+            pass
+
+me.returnOutput()
+```
 ## NEM APIに関する注意
     - 今回スクリプトの実行環境: Python3（Python2だとスクリプトが走らない、多分）
     - 今回スクリプトにハードコードされているNEMのAPIのURI: <http://go.nem.njinja:7890>
