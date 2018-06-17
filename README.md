@@ -1,5 +1,6 @@
-# maltego_training @ 2018.06.17 #tktksec
-    - [https://tktksec.connpass.com/](https://tktksec.connpass.com/)
+# maltego_training
+    - 2018.06.17 #tktksec 第8回
+    - https://tktksec.connpass.com/
 # 攻撃のための情報収集
 ## OSINT(Open-source intelligence)
     - Open-source intelligence (OSINT) is data collected from publicly available sources to be used in an intelligence context. In the intelligence community, the term "open" refers to overt, publicly available sources (as opposed to covert or clandestine sources).
@@ -146,7 +147,7 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
-## Entityを作ろう！
+## 適当なEntityを作ろう！
     1. NEMのアイコンをDL: https://bit.ly/2qM0Rsm (https://www.iconfinder.com/icons/2844392/nem_nemcoin_icon#size=256)
     2. Entities -> New Entity Type
         - Display Name: NEM
@@ -155,7 +156,7 @@ me.returnOutput()
     4. [step2]はスルー
     5. 最後[step3]はPersonalを選択
     6. うまくいけばEntity Paletteに「NEM」というアイコンが出てくる。
-## Transformを作ろう！
+## 適当なTransformを作ろう！
     1. Transforms -> New Local Transforms
         - DisplayName:test
         - Input entity type:Domain
@@ -164,4 +165,12 @@ me.returnOutput()
         - Parameters: test-maltego.py
         - Working Directory: /root/maltego_training
     3. 適当なDomainエンティティ右クリックして、test Transformsを実行。なんか出たら成功。
-
+# NEMの送信先調査をしよう！
+    1. Transforms -> New Local Transforms
+        - DisplayName: NEM
+        - Input entity type: NEM
+    2. Commanline
+        - Command: /usr/bin/python3
+        - Parameters: nem-test1.py
+        - Working Directory: /root/maltego_training
+    3. 
