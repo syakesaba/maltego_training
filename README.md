@@ -182,3 +182,62 @@ me.returnOutput()
 # 上級者向け
     1. addAdditionalFields()を使って送金金額を追加しなさい。
     2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
+## 1. addAdditionalFields()を使って送金金額を追加しなさい。
+    1. test3.pyを使って、json構造を見る。（jsonq使った方が良いかも）
+    2. ["data"]["transaction"]["timeStamp"]にあることを確認
+```javascript
+    "data": [
+        {
+            "meta": {
+                "innerHash": {},
+                "hash": {
+                    "data": "44d740e019e3cba4697c04ab3f417b27c4486ba992ede47dcd527c8ee2ac66b5"
+                },
+                "id": 2217778,
+                "height": 1678714
+            },
+            "transaction": {
+                "fee": 4250000,
+                "timeStamp": 101628479,
+                "signature": "451a3c5b2cc9a48e043174bac5384b5557f05082f009a7f9d469b7f568db6ffbbf65229dbf0a0ef75c304145b0ea428bac3412016bd11d349290f22e0822e401",
+                "amount": 1684187333,
+                "version": 1744830465,
+                "deadline": 101635679,
+                "type": 257,
+                "signer": "2f69c71a7cd584e5f92ff787fb1d68aab53985c577eff6e9061c15768899433c",
+                "message": {
+                    "type": 1,
+                    "payload": "313037313536343530"
+                },
+                "recipient": "NC64UFOWRO6AVMWFV2BFX2NT6W2GURK2EOX6FFMZ"
+            }
+        },
+        {
+            "meta": {
+                "innerHash": {},
+                "hash": {
+                    "data": "a8cddcb36bea9fab536c6d31beba5f2ac394845fe5701bc33d1672cb6e5e16ff"
+                },
+                "id": 2217698,
+                "height": 1678661
+            },
+            "transaction": {
+                "fee": 35704549,
+                "timeStamp": 101625413,
+                "signature": "1185599831f9e12e4dc4343fd20c496262eb97fde989c71badab95102ea352321602b65fa38d20911a9071c917ad5bb46055c9d9fceb6df0d4bd45fd74e53705",
+                "amount": 53136490000,
+                "version": 1744830465,
+                "deadline": 101632613,
+                "type": 257,
+                "signer": "2f69c71a7cd584e5f92ff787fb1d68aab53985c577eff6e9061c15768899433c",
+                "message": {
+                    "type": 1,
+                    "payload": "36363639"
+                },
+                "recipient": "NCYAVMNQOZ3MZETEBD34ACMAX3S57WUSWAZWY3DW"
+            }
+        },
+...
+    3. 途中！
+## 2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
+    1. 途中
