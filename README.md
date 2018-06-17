@@ -22,3 +22,7 @@
     2. 左のペインのEntity -> DomainをキャンバスにDD。
     3. defaultはpaterva.comが表示されるが、アイコンを右クリック -> All Transforms -> To DNS Name Interesting
         - たまに再生ボタンを押下しないと実行されない。
+        - DBにすでに登録があったエンティティ（サブドメイン）がにょきにょきでる。
+    4. 出てきたサブドメインをドラッグですべて選択し、右クリックしてAll Transforms -> To IP Address
+        - それぞれのサブドメインが全て名前解決される。（paterva.comは結局一つのIPに集約されている）
+
