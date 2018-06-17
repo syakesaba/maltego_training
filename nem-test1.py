@@ -23,8 +23,8 @@ if res.status_code == 200:
     for recipients in json_data["data"]:
         try:
             me = MaltegoTransform()
-            ent = me.addEntity("youroeganization.NEM", recipients['transaction']['recipient'])
-        except:
-            pass
+            ent = me.addEntity("yourorganization.NEM", recipients['transaction']['recipient'])
+        except Exception as e:
+            raise Exception(e)
 
 me.returnOutput()
