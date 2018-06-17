@@ -163,4 +163,5 @@ me.returnOutput()
         - Command: /usr/bin/python3
         - Parameters: test-maltego.py
         - Working Directory: /root/maltego_training
-    3. 
+    3. 適当なDomainエンティティ右クリックして、test Transformsを実行。なんか出たら成功。
+
