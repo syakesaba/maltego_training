@@ -182,9 +182,10 @@ me.returnOutput()
 # 上級者向け
     1. addAdditionalFields()を使って送金金額を追加しなさい。
     2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
-## 1. addAdditionalFields()を使って送金金額を追加しなさい。
+## 属性追加
     1. test3.pyを使って、json構造を見る。（jsonq使った方が良いかも）
-    2. ["data"]["transaction"]["timeStamp"]にあることを確認
+    2. 送金金額が["data"]["transaction"]["amount"]にあることを確認
+    3. タイムスタンプが["data"]["transaction"]["timeStamp"]にあることを確認
 ```javascript
     "data": [
         {
@@ -238,7 +239,51 @@ me.returnOutput()
             }
         },
 ```
-    3. 途中！
+    3. strとintに変換する過程に注意してスクリプトを書く(nem-test2.py)
+```python
+#!/usr/bin/env python3
+#encoding: utf-8
+
+from MaltegoTransform import *
+import requests
+import datetime
+import json
+
+url = "http://go.nem.ninja:7890/account/transfers/outgoing?address="
+
+def getNemTimestamp(nemTimeStamp):
+    nemesisTime = datetime.datetime(2015, 3, 29, 9, 6, 25, 0).timestamp()
+    timeStamp = nemTimeStamp + int(nemesisTime)
+    timeStamp = datetime.datetime.fromtimestamp(timeStamp)
+    return timeStamp
+
+address_id = sys.argv[1]
+
+res = requests.get(url + address_id)
+
+if res.status_code == 200:
+    json_data = json.loads(res.text)
+    for recipients in json_data["data"]:
+        try:
+            me = MaltegoTransform()
+            nem_ts = recipients['transaction']['timeStamp']
+            amount = recipients['transaction']['amount']
+            ts = getNemTimestamp(int(nem_ts))
+            ent = me.addEntity("yourorganization.NEM", recipients['transaction']['recipient'])
+            ent.addAdditionalFields("amount","amount",value=amount)
+            ent.setLinkLabel(str(ts))
+        except Exception as e:
+            raise Exception(e)
+
+me.returnOutput()
+```
+    4. Transforms -> New Local Transforms
+        - DisplayName: NEM
+        - Input entity type: NEM
+    5. Commanline
+        - Command: /usr/bin/python3
+        - Parameters: nem-test2.py
+        - Working Directory: /root/maltego_training 
+    6. 出力されたEntityにtimestamp属性が追加されていることを確認する。
   
-## 2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
-    1. 途中
+![icons/end2.png](icons/end2.png)
