@@ -177,4 +177,6 @@ me.returnOutput()
 ## NEM Transformをしよう！
     1. NEMエンティティを作る。ダブルクリックをし、NEMアドレスを入れる
     2. NEMエンティティを右クリックし、NEMを選んでTransformする
-
+# 上級者向け
+    1. addAdditionalFields()を使って送金金額を追加しなさい。
+    2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
