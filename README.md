@@ -47,7 +47,8 @@
         - NEMのAPIのURIは他にもドメインが沢山あるので、動かないときはスクリプトを適時書き換えること。
     - NEMのAPIのTimeStampは「sec from NEM created time」という独自フォーマットになるので注意。
 # MaltegoでTransformを自分で作るための最初の一歩
-## test-maltego.pdf
+## 写経
+### test-maltego.pdf
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -57,7 +58,7 @@ me = MaltegoTransform()
 me.addEntity("maltego.Phrase", "hello world")
 me.retusnOutput()
 ```
-## test1.pdf
+### test1.pdf
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -69,7 +70,7 @@ url = "http://www.yahoo.co.jp"
 response = requests.get(url)
 print(response.text)
 ```
-## test2.pdf
+### test2.pdf
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -81,7 +82,7 @@ url = "http://go.nem.ninja:7890/account/transfers/outgoing?address=NBZMQO7ZPBYNB
 response = requests.get(url)
 print(response.text)
 ```
-## test3.pdf
+### test3.pdf
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -95,7 +96,7 @@ response = requests.get(url)
 json_data = json.loads(response.text)
 print(json.dumps(json_data, indent=4))
 ```
-## test4.pdf
+### test4.pdf
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -111,7 +112,7 @@ json_data = json.loads(response.text)
 for recipients in json_data["data"]:
     print(recipients["transaction"]["recipient"])
 ```
-## nem-test1.pdf
+### nem-test1.pdf
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -144,6 +145,14 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
-# NEMのTransformsを作ろう！
-- NEMのアイコン: https://bit.ly/2qM0Rsm (https://www.iconfinder.com/icons/2844392/nem_nemcoin_icon#size=256)
+## NEM Entityを作ろう！
+    1. NEMのアイコンをDL: https://bit.ly/2qM0Rsm (https://www.iconfinder.com/icons/2844392/nem_nemcoin_icon#size=256)
+    2. Entities -> New Entity Type
+        - Display Name: NEM
+        - icons: browse -> manage -> [+] -> アイコンをアップロード
+    3. アイコン（small,large）が入ったことを確認する
+    4. [step2]はスルー
+    5. 最後[step3]はPersonalを選択
+    6. うまくいけばEntity Paletteに「NEM」というアイコンが出てくる。
+
 
