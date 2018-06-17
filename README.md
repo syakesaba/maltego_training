@@ -239,5 +239,6 @@ me.returnOutput()
         },
 ```
     3. 途中！
+  
 ## 2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
     1. 途中
