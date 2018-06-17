@@ -237,9 +237,7 @@ me.returnOutput()
                 "recipient": "NCYAVMNQOZ3MZETEBD34ACMAX3S57WUSWAZWY3DW"
             }
         },
-...
+```
     3. 途中！
-  
-
 ## 2. setLinkLabel()を使って送信日時を矢印に追加しなさい。
     1. 途中
