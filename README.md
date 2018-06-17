@@ -48,7 +48,7 @@
     - NEMのAPIのTimeStampは「sec from NEM created time」という独自フォーマットになるので注意。
 # MaltegoでTransformを自分で作るための最初の一歩
 ## 写経
-### test-maltego.pdf
+### test-maltego.pdf: Maltego形式に変換するスクリプト
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -58,7 +58,7 @@ me = MaltegoTransform()
 me.addEntity("maltego.Phrase", "hello world")
 me.retusnOutput()
 ```
-### test1.pdf
+### test1.pdf: PythonでWebのGET
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -70,7 +70,7 @@ url = "http://www.yahoo.co.jp"
 response = requests.get(url)
 print(response.text)
 ```
-### test2.pdf
+### test2.pdf: NEMのAPIから生のJSONをGET
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -82,7 +82,7 @@ url = "http://go.nem.ninja:7890/account/transfers/outgoing?address=NBZMQO7ZPBYNB
 response = requests.get(url)
 print(response.text)
 ```
-### test3.pdf
+### test3.pdf: NEMのAPIから得たJSONを読みやすく整形
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -96,7 +96,7 @@ response = requests.get(url)
 json_data = json.loads(response.text)
 print(json.dumps(json_data, indent=4))
 ```
-### test4.pdf
+### test4.pdf: JSONからrecipients(送信先)のアドレスを抜き出し列挙する
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
