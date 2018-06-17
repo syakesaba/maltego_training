@@ -1,5 +1,5 @@
-# maltego_training
-    2018.06.17 #tktksec
+# maltego_training @ 2018.06.17 #tktksec
+    - [https://tktksec.connpass.com/](https://tktksec.connpass.com/)
 # 攻撃のための情報収集
 ## OSINT(Open-source intelligence)
     - Open-source intelligence (OSINT) is data collected from publicly available sources to be used in an intelligence context. In the intelligence community, the term "open" refers to overt, publicly available sources (as opposed to covert or clandestine sources).
