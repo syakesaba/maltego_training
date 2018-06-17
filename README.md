@@ -57,7 +57,7 @@
 from MaltegoTransform import *
 me = MaltegoTransform()
 me.addEntity("maltego.Phrase", "hello world")
-me.retusnOutput()
+me.returnOutput()
 ```
 ### test1.pdf: PythonでWebのGET
 ```python
