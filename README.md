@@ -1,5 +1,5 @@
 # maltego_training
-
+    2018.06.17 #tktksec
 # 攻撃のための情報収集
 ## OSINT(Open-source intelligence)
     - Open-source intelligence (OSINT) is data collected from publicly available sources to be used in an intelligence context. In the intelligence community, the term "open" refers to overt, publicly available sources (as opposed to covert or clandestine sources).
@@ -42,7 +42,7 @@
         - NEMのAPIのURIは他にもドメインが沢山あるので、動かないときはスクリプトを適時書き換えること。
 # MaltegoでTransformを自分で作るための最初の一歩
 ## test-maltego.pdf
-```
+```python
 #!/usr/bin/env python3
 #encoding: utf-8
 
@@ -52,7 +52,7 @@ me.addEntity("maltego.Phrase", "hello world")
 me.retusnOutput()
 ```
 ## test1.pdf
-```
+```python
 #!/usr/bin/env python3
 #encoding: utf-8
 
@@ -64,7 +64,7 @@ response = requests.get(url)
 print(response.text)
 ```
 ## test2.pdf
-```
+```python
 #!/usr/bin/env python3
 #encoding: utf-8
 
@@ -76,7 +76,7 @@ response = requests.get(url)
 print(response.text)
 ```
 ## test3.pdf
-```
+```python
 #!/usr/bin/env python3
 #encoding: utf-8
 
@@ -90,7 +90,7 @@ json_data = json.loads(response.text)
 print(json.dumps(json_data, indent=4))
 ```
 ## test4.pdf
-```
+```python
 #!/usr/bin/env python3
 #encoding: utf-8
 
@@ -106,7 +106,7 @@ for recipients in json_data["data"]:
     print(recipients["transaction"]["recipient"])
 ```
 ## nem-test1.pdf
-```
+```python
 #!/usr/bin/env python3
 #encoding: utf-8
 
@@ -138,7 +138,3 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
-    2. 
-
-
-
