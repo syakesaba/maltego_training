@@ -166,6 +166,7 @@ me.returnOutput()
         - Working Directory: /root/maltego_training
     3. 適当なDomainエンティティ右クリックして、test Transformsを実行。なんか出たら成功。
 # NEMの送信先調査をしよう！
+## NEM Transform(送信先羅列Transformを作る)を作ろう！
     1. Transforms -> New Local Transforms
         - DisplayName: NEM
         - Input entity type: NEM
@@ -173,4 +174,7 @@ me.returnOutput()
         - Command: /usr/bin/python3
         - Parameters: nem-test1.py
         - Working Directory: /root/maltego_training
-    3. 
+## NEM Transformをしよう！
+    1. NEMエンティティを作る。ダブルクリックをし、NEMアドレスを入れる
+    2. NEMエンティティを右クリックし、NEMを選んでTransformする
+
