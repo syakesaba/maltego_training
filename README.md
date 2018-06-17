@@ -33,6 +33,10 @@
     - Shodanなど商用データベースなどもある。
     - **syakesabaメモ: Kaggleで公開された匿名化されたデータではなく、プライベートに紐付けられる情報が多いので取扱い注意**
     - 自分でTransformを作ることで、対象組織に特化したOSINTをすることができる
+# NEMについて
+    - 富豪ランキングのお財布: <https://nemnodes.org/richlist/>
+    - コインチェックの2000万XEM(約580億円)送り先: __NC4C6PSUW5CLTDT5SXAGJDQJGZNESKFK5MCN77OG__
+    - XEM-USD Rate: <https://www.coingecko.com/en/price_charts/nem/usd>
 ## NEM API叩く際の注意
     - Maltego API <https://github.com/cmlh/MaltegoTransform-Python>
     - NEM Core API <http://nem-core-api.readthedocs.io/api/>
@@ -138,3 +142,4 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
+
