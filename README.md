@@ -162,5 +162,5 @@ me.returnOutput()
     2. Commandline
         - Command: /usr/bin/python3
         - Parameters: test-maltego.py
-        - Working Directory: /root
+        - Working Directory: /root/maltego_training
     3. 
