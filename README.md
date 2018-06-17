@@ -20,7 +20,7 @@
 ## Maltego最初の一歩
     1. 左上のちっちゃい[+]からキャンバスをNew。
     2. 左のペインのEntity -> DomainをキャンバスにDD。
-    3. defaultはpaterva.comが表示される。アイコンを右クリック -> All Transforms -> To DNS Name Interesting
+    3. defaultは[paterva.com](paterva.com)が表示される。アイコンを右クリック -> All Transforms -> To DNS Name Interesting
         - たまに再生ボタンを押下しないと実行されない。
         - DBにすでに登録があったエンティティ（サブドメイン）がにょきにょきでる。
     4. 出てきたサブドメインをドラッグですべて選択し、右クリックしてAll Transforms -> To IP Address
@@ -29,21 +29,23 @@
     paterva.comがいくつかのサブドメインを持つことそれらのIPアドレスが一つのIPであることを確認できた。
     Maltegoが半自動でサイト間の関係性を可視化したことを確認する。
 # 様々なTransform(OSINTの為に便利な情報源)
-    - Transform Hub <https://www.paterva.com/web7/about/hub.php>
+    - Transform Hub: https://www.paterva.com/web7/about/hub.php
     - Shodanなど商用データベースなどもある。
-    - **syakesabaメモ: Kaggleで公開された匿名化されたデータではなく、プライベートに紐付けられる情報が多いので取扱い注意**
+    - メモ: Kaggleで公開された匿名化されたデータではなく、プライベートに紐付けられる情報が多いので取扱い注意
     - 自分でTransformを作ることで、対象組織に特化したOSINTをすることができる
 # NEMについて
-    - 富豪ランキングのお財布: <https://nemnodes.org/richlist/>
-    - コインチェックの2000万XEM(約580億円)送り先: __NC4C6PSUW5CLTDT5SXAGJDQJGZNESKFK5MCN77OG__
-    - XEM-USD Rate: <https://www.coingecko.com/en/price_charts/nem/usd>
+    - 富豪ランキングのお財布: https://nemnodes.org/richlist/
+    - コインチェックの2000万XEM(約580億円)送り先: NC4C6PSUW5CLTDT5SXAGJDQJGZNESKFK5MCN77OG
+    - XEM-USD Rate: https://www.coingecko.com/en/price_charts/nem/usd
 ## NEM API叩く際の注意
-    - Maltego API <https://github.com/cmlh/MaltegoTransform-Python>
-    - NEM Core API <http://nem-core-api.readthedocs.io/api/>
+    - Maltego API: https://github.com/cmlh/MaltegoTransform-Python
+    - NEM API: https://nemproject.github.io/
+    - NEM Core API: http://nem-core-api.readthedocs.io/api/
     - 今回スクリプトの実行環境: Python3（Python2だとスクリプトが走らない、多分）
-    - 今回スクリプトにハードコードされているNEMのAPIのURI: <http://go.nem.njinja:7890>
-    - DoS対策されているので、同一グローバルIPからの多重アクセスはBAN対象になる
+    - 今回スクリプトにハードコードされているNEMのAPIのURI: http://go.nem.njinja:7890/
+    - DoS対策されているので、同一グローバルIPからの多重アクセスはBAN対象になる。
         - NEMのAPIのURIは他にもドメインが沢山あるので、動かないときはスクリプトを適時書き換えること。
+    - NEMのAPIのTimeStampは「sec from NEM created time」という独自フォーマットになるので注意。
 # MaltegoでTransformを自分で作るための最初の一歩
 ## test-maltego.pdf
 ```python
@@ -142,4 +144,6 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
+# NEMのTransformsを作ろう！
+- NEMのアイコン: https://bit.ly/2qM0Rsm (https://www.iconfinder.com/icons/2844392/nem_nemcoin_icon#size=256)
 
