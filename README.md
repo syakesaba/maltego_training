@@ -34,6 +34,17 @@
     - **syakesabaメモ: Kaggleで公開された匿名化されたデータではなく、プライベートに紐付けられる情報が多いので取扱い注意**
     - 自分でTransformを作ることで、対象組織に特化したOSINTをすることができる
 # MaltegoでTransformを自分で作るための最初の一歩
+    1. test-maltego.pdf
+```
+#!/usr/bin/env python3
+#encoding: utf-8
+
+from MaltegoTransform import *
+me = MaltegoTransform()
+me.addEntity("maltego.Phrase", "hello world")
+me.retusnOutput()
+```
+
     1. nem-test1.pdf
 ```
 #!/usr/bin/env python3
@@ -67,6 +78,7 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
+    2. 
 ## NEM APIに関する注意
     - 今回スクリプトの実行環境: Python3（Python2だとスクリプトが走らない、多分）
     - 今回スクリプトにハードコードされているNEMのAPIのURI: <http://go.nem.njinja:7890>
