@@ -33,13 +33,14 @@
     - Shodanなど商用データベースなどもある。
     - メモ: Kaggleで公開された匿名化されたデータではなく、プライベートに紐付けられる情報が多いので取扱い注意
     - 自分でTransformを作ることで、対象組織に特化したOSINTをすることができる
+    - MaltegoのTransformを作るPythonバインディングライブラリ: https://github.com/cmlh/MaltegoTransform-Python
+        - Python3用: https://github.com/nenaiko-dareda/maltego_training/blob/master/MaltegoTransform.py
 # NEMについて
     - 富豪ランキングのお財布: https://nemnodes.org/richlist/
     - コインチェックの2000万XEM(約580億円)送り先: NC4C6PSUW5CLTDT5SXAGJDQJGZNESKFK5MCN77OG
     - XEM-USD Rate: https://www.coingecko.com/en/price_charts/nem/usd
 ## NEM API叩く際の注意
-    - Maltego API: https://github.com/cmlh/MaltegoTransform-Python
-    - NEM API: https://nemproject.github.io/
+    - NEM APIの仕様: https://nemproject.github.io/
     - NEM Core API: http://nem-core-api.readthedocs.io/api/
     - 今回スクリプトの実行環境: Python3（Python2だとスクリプトが走らない、多分）
     - 今回スクリプトにハードコードされているNEMのAPIのURI: http://go.nem.njinja:7890/
@@ -112,7 +113,7 @@ json_data = json.loads(response.text)
 for recipients in json_data["data"]:
     print(recipients["transaction"]["recipient"])
 ```
-### nem-test1.pdf
+### nem-test1.pdf: 得た情報をMaltego Transform
 ```python
 #!/usr/bin/env python3
 #encoding: utf-8
@@ -145,7 +146,7 @@ if res.status_code == 200:
 
 me.returnOutput()
 ```
-## NEM Entityを作ろう！
+## Entityを作ろう！
     1. NEMのアイコンをDL: https://bit.ly/2qM0Rsm (https://www.iconfinder.com/icons/2844392/nem_nemcoin_icon#size=256)
     2. Entities -> New Entity Type
         - Display Name: NEM
@@ -154,5 +155,12 @@ me.returnOutput()
     4. [step2]はスルー
     5. 最後[step3]はPersonalを選択
     6. うまくいけばEntity Paletteに「NEM」というアイコンが出てくる。
-
-
+## Transformを作ろう！
+    1. Transforms -> New Local Transforms
+        - DisplayName:test
+        - Input entity type:Domain
+    2. Commandline
+        - Command: /usr/bin/python3
+        - Parameters: test-maltego.py
+        - Working Directory: /root
+    3. 
